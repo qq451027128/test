@@ -398,22 +398,56 @@ button { background-color: #fff;border-radius:0; line-height:inherit;}
     width: 351px;
     height: 87px;
 }
+
 .hot_posHotPosition .clearfix > li .pli_btm{
     padding-top: 10px;
-    border-top: 1px solid #000;
+    border-top: 1px dashed #999999;
     margin-top: 10px;
-    background-color: blue;
     height: 59px;
     width: 351px;
+    /*background-color: skyblue;*/
 }
+.hot_posHotPosition .clearfix > li  .bottom-right-img{
+    width: 40px;
+    height: 40px;
+    float: left;
+}
+
 .hot_posHotPosition .clearfix > li .position_name{
     height: 22px;
-    width: 230px;
+    width: 160px;
     display: inline-block;
-    color: #333;
+    color: #333333;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 16px;
+    float: left;
 }
-.hot_posHotPosition .clearfix > li span{
+
+.bottom-right{
+    margin-left: 20px;
+    float: left;
+    font-size: 14px;
+    color: #999999;
+}
+.bottom-right a{
+    color: #6c6b6c;
+}
+.bottom-right a:hover{
+    color: #02b48b;
+}
+
+.hot_posHotPosition .clearfix > li .yuexin{
     color: red;
+    float: right;
+    line-height: 29px;
+}
+.hot_posHotPosition .clearfix > li .create-time{
+    color: #6c6b6c;
+    font-size: 14px;
+    line-height: 29px;
+    float: left;
 }
 .hot_posHotPosition .clearfix > li .labels{
     height: 30px;
@@ -436,6 +470,7 @@ button { background-color: #fff;border-radius:0; line-height:inherit;}
     height: 30px;
     line-height: 30px;
     color: #777;
+    clear: both;
 }
 
 
@@ -475,10 +510,63 @@ button { background-color: #fff;border-radius:0; line-height:inherit;}
     height: 288px;
     width: 270px;
     float: left;
-    border: 1px solid #afb5c0;
+    border: 1px ridge #afb5c0;
     box-sizing: border-box;
     margin-top: 10px;
     margin-right: 34px;
+    padding: 20px 5px;
+}
+.content .ad-company-list > li .ad-company-listli_div{
+    height: 160px;
+    text-align: center;
+}
+
+.content .ad-company-list > li .ad-company-list_img{
+    height: 80px;
+    width: 80px;
+}
+.content .ad-company-listli_div .link_name{
+    color: #2f3234;
+}
+.content .ad-company-listli_div .jianjie{
+    color: #999999;
+}
+
+
+.content .ad-company-list li .ad-company-listli_bto{
+    width: 260px;
+    height: 80px;
+    margin-top: 20px;
+    border-top: 1px dashed #afb5c0;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+.content .ad-company-list li .ad-company-listli_bto > div{
+    float: left;
+    width: 86px;
+    text-align: center;
+}
+.content .ad-company-list li .ad-company-listli_bto .mid{
+    border-left: 1px solid #afb5c0;
+    border-right: 1px solid #afb5c0;
+}
+.content .ad-company-list li .ad-company-listli_bto > div span{
+    color: #02b48b;
+    font-size: 14px;
+}
+.content .ad-company-list li .ad-company-listli_bto > div a{
+    font-size: 14px;
+    color: #999999;
+}
+.content .ad-company-list li .ad-company-listli_bto > div a:hover{
+    color: #02b48b;
+}
+.content .ad-company-list > li p{
+    max-width: 260px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #666666;
 }
 .content .linkbox{
     margin-top: 52px;
