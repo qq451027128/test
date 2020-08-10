@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>31_jQuery的事件委托</title>
+    <script src="jquery.js"></script>
+    <script>
+       $(function (){
+            /*
+            事件委托就是请别人做事情,然后将处理结果返回给我们
+             */
+           $('button').click(function (){
+               $('ul').append("<li>我是新增的li</li>")
+           })
+           /*
+           在jQuery中,如果通过核心函数找到的元素不止一个的话
+           那么在添加事件的时候
+           jQuery会遍历所有找到的元素,给所有找到的元素添加事件
+            */
+           // $("ul>li").click(function (){
+           //     console.log($(this).html());
+           // })
+           /*
+           delegate事件委托
+           第一个参数指定添加的 标签
+           第二个参数 指定添加的事件
+           第三个参数 事件的回调函数
+            */
+           $('ul').delegate('li','click',function (){
+               console.log($(this).html());
+           })
+        })
+    </script>
+</head>
+<body>
+<ul>
+    <li>我是第1个li</li>
+    <li>我是第2个li</li>
+    <li>我是第3个li</li>
+</ul>
+<button>新增一个li</button>
+</body>
+</html>

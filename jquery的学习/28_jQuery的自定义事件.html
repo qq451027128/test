@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>28_自定义事件</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+       $(function (){
+            /*
+            自定义事件必须满足两个条件
+            1.事件必须是通过on绑定的
+            2.事件必须通过trigger来触发
+             */
+           $('.son').on('myCKICK',function (){
+               alert('Hello World!')
+           })
+           $('.son').trigger('myCKICK')
+        })
+    </script>
+
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <a href="http://www.baidu.com"><span>注册</span></a>
+    <form action="http://www.taobao.com">
+        <input type="text">
+        <input type="submit">
+    </form>
+</body>
+</html>

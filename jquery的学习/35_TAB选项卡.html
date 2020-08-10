@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>35_TAB选项卡</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 440px;
+            height: 298px;
+            border: 1px solid #000;
+            margin: 50px auto;
+        }
+        .box .nav >li{
+            list-style: none;
+            width: 110px;
+            height: 50px;
+            background-color: orange;
+            text-align: center;
+            line-height: 50px;
+            float: left;
+        }
+        .box .nav > .current{
+            background-color: #cccccc;
+        }
+        .content li {
+            list-style: none;
+            display: none;
+        }
+         .box li > img{
+             width: 440px;
+             height: 248px;
+         }
+         .content .show{
+             display: block;
+         }
+    </style>
+    <script src="jquery.js"></script>
+    <script src="jquery.js"></script>
+    <script>
+       $(function (){
+           //  //1.监听选项卡的移入事件
+           // $('.nav > li').mouseenter(function (){
+           //     //1.1修改被移入选项卡的背景颜色
+           //     $(this).addClass('current')
+           //     //1.2获取当前移入选项卡的索引
+           //     var index=$(this).index();
+           //     //1.3根据索引找到相应的图片
+           //     var $li=$(".content>li").eq(index);
+           //     //1.4显示找到的图片
+           //     $li.addClass('show')
+           //
+           // })
+           // $('.nav > li').mouseleave(function (){
+           //     //1.1还原选项卡的颜色
+           //     $(this).removeClass()
+           //     //1.2获取移除选项卡的索引
+           //     var index=$(this).index();
+           //     //1.3根据索引找到相应的图片
+           //     var $li=$(".content>li").eq(index);
+           //     //1.4隐藏找到的图片
+           //     $li.removeClass('show')
+           //
+           // })
+             //1.监听选项卡的移入事件
+           $('.nav > li').mouseenter(function (){
+                //1.1修改被移入选项卡的背景颜色
+                   $(this).addClass('current')
+               //1.2还原其他选项卡的背景颜色
+               $(this).siblings().removeClass('current')
+                //1.3获取当前移入选项卡的索引
+               var index=$(this).index();
+               //1.4根据索引找到相应的图片
+               var $li=$(".content>li").eq(index);
+               //1.5显示相应图片,添加相应的类
+                $li.addClass('show')
+               //1.6 隐藏非当前的图片
+               $li.siblings().removeClass('show')
+
+           })
+        })
+    </script>
+
+</head>
+<body>
+<div class="box">
+    <ul class="nav">
+        <li class="current">小梦</li>
+        <li>小妍</li>
+        <li>小丽</li>
+        <li>小花</li>
+    </ul>
+    <ul class="content">
+        <li class="show"><img src="img/meinv1.jpg" alt=""></li>
+        <li><img src="img/meinv2.jpg" alt=""></li>
+        <li><img src="img/meinv3.jpg" alt=""></li>
+        <li><img src="img/meiv4.jpg" alt=""></li>
+
+    </ul>
+</div>
+</body>
+</html>

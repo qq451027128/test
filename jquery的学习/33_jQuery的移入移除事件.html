@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>33_jQuery的移入移除事件</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script src="jquery.js"></script>
+    <script>
+       $(function (){
+           // mouseover & mouseout子元素的移入移除也会触发父元素的事件
+            $('.father').mouseover(function (){
+                console.log("Father被移入了!");
+            })
+           $('.father').mouseout(function (){
+               console.log("Father被移出了!");
+           })
+           //mouseenter && mouseleave 子元素的移动不会触发父元素的事件
+           $('.father').mouseenter(function (){
+                console.log("Father被移入了!");
+            });
+           $('.father').mouseleave(function (){
+                console.log("Father被移出了!");
+            })
+
+           /*
+           hover方法可以同时监听移入跟移除,
+           第一个函数为移入
+           第二个函数为移除
+           也可以只传入一个函数,表示同时监听移入跟移出
+            */
+           $('.father').hover(function (){
+                console.log("Father被移入了!");
+           },function (){
+               console.log("Father被移出了!");
+           })
+        })
+    </script>
+
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+</body>
+</html>
