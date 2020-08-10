@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05_jQuery冲突问题</title>
+    <script src="jquery.js"></script>
+    <script>
+        //1.释放jQuery的使用权
+        //注意点:释放操作必须在编写其他jQuery代码之前
+        //释放之后不能使用$符号,只能使用jQuery
+        jQuery.noConflict(); //不能使用$,只能使用JQuery
+
+        jQuery(function (){
+            alert('hello world!')
+        })
+        //2.自定义一个访问符号
+        //一下用nj代替 jQuery的访问符号
+        var nj = jQuery.noConflict();
+        nj(function (){
+            alert('我是nj')
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

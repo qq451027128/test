@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;
+        padding: 0;}
+        div{
+            height: 100px;
+            width: 100px;
+            border: 1px solid #000;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        // window.onload=function (ev){
+        //     //1.利用原生的JS寻找DOM 元素
+        //     var div1=document.getElementsByTagName("div")[0]; //寻找第1个div标签
+        //     var div2=document.getElementsByClassName('div2')[0];
+        //     var div3=document.getElementById('div3');
+        //     //2.利用原生的JS修改背景颜色
+        //     console.log(div1, div2, div3);
+        //     // div1.style.backgroundColor='red';
+        //     // div2.style.backgroundColor='blue';
+        //     // div3.style.backgroundColor='green';
+        // }
+        //通过jQuery寻找元素
+        $(function (){
+            var $div1=$('div')[0];
+            var $div2=$('.div2')[0];
+            var $div3=$('#div3')[0];
+            console.log($div1, $div2, $div3);
+            //2.利用jQuery修改背景颜色
+            $div1.css({
+                backgroundColor: "red"
+            });
+        })
+    </script>
+</head>
+<body>
+    <div></div>
+    <div class="div2"></div>
+    <div id="div3"></div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>25_jQuery的时间移除</title>
+    <script src="jquery.js"></script>
+    <script>
+       $(function (){
+           function test1(){
+                alert('hello world!1')
+           }
+           function test2(){
+                alert('hello world!2')
+           }
+           $('button').click(test1)
+           $('button').click(test2)
+           $('button').mouseleave(function (){
+               alert('mouseleave')
+           })
+           $('button').mouseenter(function (){
+               alert('mouseenter')
+           })
+           //移除该元素注册的所有事件
+           //off如果不传入参数,移除所有的时间
+           $('button').off();
+
+           //传入一个参数,移除改类型的所有事件
+           $('button').off('click');
+
+            //传入两个参数移除指定类型的 指定时间
+           $('button').off('click',test1);
+        })
+    </script>
+
+</head>
+<body>
+    <button>我是按钮</button>
+</body>
+</html>

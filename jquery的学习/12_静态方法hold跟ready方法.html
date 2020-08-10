@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12_静态方法holdready方法</title>
+    <script src="jquery.js"></script>
+    <script>
+        //暂停ready的执行
+        //传入参数true表示暂停
+        $.holdReady(true);
+        $(document).ready(function (){
+            alert('ready')
+        })
+    </script>
+</head>
+<body>
+    <button>恢复ready时间</button>
+    <script>
+        var btn=document.getElementsByTagName('button')[0];
+        btn.onclick = function (){
+            //传入参数false表示取消暂停,让程序能够执行
+            $.holdReady(false)
+        }
+    </script>
+</body>
+</html>

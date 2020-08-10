@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10_静态的map方法</title>
+    <script src="jquery.js"></script>
+    <script>
+        var arr=[1,3,5,7,9];
+        var arr1={1:1,2:3,3:5,4:7,5:9}
+        //利用原生的JS的map方法遍历
+        /*
+        第一个:当前遍历到的元素
+        第二个:当前遍历的索引
+        第三个:当前便利的数组
+        注意点:不能遍历伪数组
+         */
+        arr.map(function (value, index, array){
+            console.log(value, index, array);
+        })
+
+        /*
+        第一个参数:要遍历的数组
+        第二个参数: 没遍历一个元素之后要执行的回调函数
+        回调函数的参数
+            第一个参数:遍历到的元素
+            第二个参数:遍历到的索引
+         注意点:
+            很jQuery中的each静态方法一样,可以遍历伪数组
+         */
+        /*
+        jQuery中的each方法跟map方法的区别
+        each静态方法的默认返回值是遍历谁就返回谁
+        map静态方法的返回值是一个空数组
+            可以在回调函数中return 对数据进行处理,并生成新的数组返回
+         */
+        var a1=$.each(arr,function (value,index){
+            console.log(value, index);
+            return value+index
+        })
+        var a2=$.map(arr1,function (value,index){
+            console.log(value, index);
+            return value+index
+        })
+        console.log(a1, a2);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

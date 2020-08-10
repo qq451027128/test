@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>14_jQuery内容选择器</title>
+    <style>
+        div{
+            width: 50px;
+            height: 100px;
+            background-color: rebeccapurple;
+            margin-top: 5px;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+       $(function (){
+           //:empty表示既没有文本内容有没有子元素的指定元素
+            var $div = $("div:empty");
+           console.log($div);
+           //:parent 找到有文本内容或者有子元素的指定元素
+           var $div1 = $('div:parent')
+           console.log($div1);
+           //:contains  找到内容包含有 我是div的 标签
+           var $div2 = $('div:contains("我是div")')
+           console.log($div2);
+            //:has 找到包含指定子元素的指定元素
+           var $div3 = $('div:has("span")')
+           console.log($div3);
+       })
+    </script>
+
+</head>
+<body>
+    <div></div>
+    <div>我是div</div>
+    <div>他们我是div123</div>
+    <div><span></span></div>
+    <div><p></p></div>
+</body>
+</html>

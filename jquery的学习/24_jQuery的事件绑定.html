@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>24_jQuery的事件绑定</title>
+    <script src="jquery.js"></script>
+    <script>
+       $(function (){
+           /*
+           jQuery有两种绑定时间的方式
+           1.eventName(fn)
+           2.on(eventName,fn)
+           注意点:
+                可以添加多个相同或者不同类型的事件
+            */
+           //编码效率高,部分时间jQuery没有实现,所以不能添加
+           $('button').click(function (){
+               alert('hello world!1')
+           })
+           $('button').click(function (){
+               alert('hello world!2')
+           })
+           $('button').mouseleave(function (){
+               alert('mouseleave')
+           })
+           $('button').mouseenter(function (){
+               alert('mouseenter')
+           })
+            //编码效率低,所有js时间都可以添加
+           $('button').on('click',function (){
+               alert('hello world!2')
+           })
+        })
+    </script>
+
+</head>
+<body>
+    <button>我是按钮</button>
+</body>
+</html>

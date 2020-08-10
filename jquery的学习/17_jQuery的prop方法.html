@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>17_jQuery的prop方法</title>
+    <script src="jquery.js"></script>
+    <script>
+       $(function (){
+            /*
+            1.prop方法
+            特点与attr方法一致
+            2.removeprop方法
+            特点与removeattr方法一致
+
+            prop方法不仅可以操作属性,也可以操作属性节点
+            官方推荐在操作属性几点时,具有True跟False两个属性节点,
+            如checked selected 或者 disabled 使用prop() 其他的使用attr()
+             */
+           $('span').eq(0).prop('demo','it666')
+           $('span').eq(1).prop('demo','it666')
+           console.log($('span').prop('demo'));;
+           $('span').removeProp('demo')
+
+           console.log($('span').prop('class'));
+           $('span').prop('class','abc')
+       })
+    </script>
+
+</head>
+<body>
+<span class="span1" name="it666"></span>
+<span class="span2" name="zwp"></span>
+</body>
+</html>

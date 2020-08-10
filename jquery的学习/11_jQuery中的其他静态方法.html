@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11_jQuery中的其他静态方法</title>
+    <script src="jquery.js"></script>
+    <script>
+        var str="          zwp      "
+        //trim去除左右空格的函数
+        //参数:需要去除空格的字符串
+        //返回值:去除空格之后的字符串
+        var res = $.trim(str)
+        console.log("-----"+res+"-----");
+
+        //真数组
+        var arr=[1,3,5,7,9];
+        //伪数组
+        var arrlike={1:1,2:3,3:5,4:7,5:9}
+        //对象
+        var obj ={
+            'name':'zwp',
+            age:'33'
+        }
+        //函数
+        var fn =function (){};
+        //Window对象
+        var w = window;
+        //判断传入的对象是否是一个Window对象
+        //返回值True 跟 Flase
+        console.log($.isWindow(w));
+        //判断对象是否是个真数组,返回值是True跟False
+        var res1=$.isArray();
+        //判断对象是否是一个函数
+        //jQuery本身就是一个匿名执行函数
+        var res2=$.isFunction(jQuery);
+        console.log(res2);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

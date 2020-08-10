@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06_jQuery核心函数</title>
+    <script src="jquery.js"></script>
+    <script>
+        //$(); 就代表调用jQuery的核心函数
+        $(function (){
+            // 1.接受一个函数
+            alert('hello world!')
+            //2.接受一个字符串
+             //2.1接受一个字符串选择器
+            var $box1=$('.box1')
+            var $box2=$('#box2')
+            console.log($box1, $box2);
+           //2.2接受一个代码片段
+            //动态的创建一个P标签
+            var $p=$("<p>我是段落!</p>")
+            console.log($p);
+            $box1.append($p)
+             //3.接受一个DOM元素
+            var span = document.getElementsByTagName('span')[0];
+            console.log(span);
+            var $span=$(span);
+            console.log($span);
+        })
+
+    </script>
+</head>
+<body>
+    <div class="box1"></div>
+    <div id="box1"></div>
+<span>我是span</span>
+</body>
+</html>
